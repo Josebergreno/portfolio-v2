@@ -12,6 +12,7 @@
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   border-radius: 0 0 25px 25px;
@@ -27,13 +28,12 @@
   color: black;
 }
 
-.contact-container {
+.header-container {
   width: 100%;
   height: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   margin: 10px;
 }
 
@@ -44,18 +44,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 200%;
+  font-size: 250%;
   font-family: "Nanum Pen Script", cursive;
 }
 
-/* @media (max-width: 550px) {
-  .text-holder {
-    font-size: 100%;
-  }
+.how-to--contact {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 150%;
+  color: black;
 }
 
-@media (min-width: 551px) {
-  .text-holder {
-    font-size: 120%;
+.email-href {
+  color: #d81c23;
+  transition: 0.2s;
+}
+.email-href:hover {
+  transform: scale(2);
+  color: blue;
+}
+.link-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  height: 90%;
+  justify-content: space-around;
+  align-items: center;
+}
+.link-container--parent {
+  width: 100%;
+  height: 20vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indiv-icon--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vmin;
+}
+
+.icon {
+  width: 10vmin;
+  transition: 0.2s;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* @media (max-width: 500px) {
+  .icon {
+    width: 15vmin;
+  }
+  .github-icon {
+    width: 15vmin;
   }
 } */
+.body-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
+}

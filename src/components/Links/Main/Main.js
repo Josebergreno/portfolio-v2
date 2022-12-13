@@ -8,7 +8,6 @@ const Main = (props) => {
 
   const headerEffect = ["Hi I'm", "Joe.", "Web", "Developer"];
   const splitArr = headerEffect.join("").split("");
-  console.log(splitArr);
 
   useEffect(() => {
     const interval = setInterval(() => {
