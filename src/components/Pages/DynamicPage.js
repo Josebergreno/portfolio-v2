@@ -1,7 +1,6 @@
 import styles from "./DynamicPage.module.css";
 import { Divider } from "@mui/material";
 import { useEffect, useState, useCallback } from "react";
-import { useParams } from "react-router-dom";
 import logo from "../UI/Icons/logo-cropped.svg";
 import avatar from "../UI/Icons/avatar.svg";
 import BreadCrumbs from "../Breadcrumbs/BreadCrumbs";
@@ -13,19 +12,19 @@ import PastProjectsPage from "./Past Projects Page/PastProjectsPage";
 import Line from "../Links/About/Line";
 
 const DynamicPage = (props) => {
-  const { handle } = useParams();
+  // const { handle } = useParams();
 
-  const headerContent = () => {
-    if (handle === "about") {
-      return contentHeader[0];
-    } else if (handle === "skills") {
-      return contentHeader[1];
-    } else if (handle === "past-projects") {
-      return contentHeader[2];
-    } else if (handle === "contact") {
-      return contentHeader[3];
-    }
-  };
+  // const headerContent = () => {
+  //   if (handle === "about") {
+  //     return contentHeader[0];
+  //   } else if (handle === "skills") {
+  //     return contentHeader[1];
+  //   } else if (handle === "past-projects") {
+  //     return contentHeader[2];
+  //   } else if (handle === "contact") {
+  //     return contentHeader[3];
+  //   }
+  // };
 
   const bodyContent = () => {
     if (handle === "contact") {

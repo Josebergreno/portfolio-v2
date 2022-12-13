@@ -1,39 +1,52 @@
-import styles from "./AboutLink.module.css";
-import logo from "../../UI/Icons/logo-cropped.svg";
-import avatar from "../../UI/Icons/avatar.svg";
-import { Link } from "react-router-dom";
-import Line from "./Line";
+import styles from "./Main.module.css";
+
 import { useEffect, useState } from "react";
 
-const AboutLink = (props) => {
+const Main = (props) => {
   const [activeLetter, setActiveLetter] = useState("");
   const [randomNum, setRandomNum] = useState(0);
 
   const headerEffect = ["Hi I'm", "Joe.", "Web", "Developer"];
   const splitArr = headerEffect.join("").split("");
+  console.log(splitArr);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setRandomNum(Math.floor(Math.random() * 21) + 1);
       setActiveLetter(splitArr[randomNum]);
-    }, (randomNum * 1000) / 6);
+    }, 3000);
     return () => clearInterval(interval);
   }, [activeLetter, randomNum, splitArr]);
 
   return (
     <>
-      <Link to="/about" onClick={props.onClick} className={styles["container"]}>
+      <a
+        href="google.com"
+        onClick={props.onClick}
+        className={styles["container"]}
+      >
+        <nav className={styles["nav-bar"]}>
+          <a href="google.com" className={styles["nav-item"]}>
+            about
+          </a>
+          <a href="google.com" className={styles["nav-item"]}>
+            contact
+          </a>
+          <a href="google.com" className={styles["nav-item"]}>
+            skills
+          </a>
+          <a href="google.com" className={styles["nav-item"]}>
+            past-projects
+          </a>
+        </nav>
         <div className={styles["heading-container"]}>
           <h1 className={styles["h1"]}>
             {headerEffect.map((val) => (
-              <span
-                key={val}
-                className={styles[val === "Joe." ? "joe" : undefined]}
-              >
+              <span key={val} className={styles["span-container"]}>
                 {val.split("").map((val, i) => (
                   <span
                     className={
-                      val === activeLetter && activeLetter !== " "
+                      val === activeLetter && val !== " "
                         ? styles["flicker"]
                         : styles["span"]
                     }
@@ -46,22 +59,9 @@ const AboutLink = (props) => {
             ))}
           </h1>
         </div>
-
-        <div className={styles["click-here--container"]}>
-          <div className={styles["click-here"]}>
-            Click here to learn a little about me:)
-          </div>
-        </div>
-        <div className={styles["avatar-container"]}>
-          <img src={avatar} alt={"avatar"} className={styles["avatar"]} />
-        </div>
-        <div className={styles["logo-container"]}>
-          <img className={styles["logo"]} src={logo} alt={"Logo"} />
-        </div>
-        <Line />
-      </Link>
+      </a>
     </>
   );
 };
 
-export default AboutLink;
+export default Main;

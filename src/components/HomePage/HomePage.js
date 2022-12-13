@@ -1,44 +1,20 @@
 import React from "react";
 import styles from "./HomePage.module.css";
-import SkillsLink from "../Links/Skills/SkillsLink";
-import ContactLink from "../Links/Contact/ContactLink";
-import PastProjectsLink from "../Links/PastProjects/PastProjectsLink";
-import AboutLink from "../Links/About/AboutLink";
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import Skills from "../Links/Skills/Skills";
+import Contact from "../Links/Contact/Contact";
+import PastProjects from "../Links/PastProjects/PastProjects";
+import About from "../Links/About/About";
+import Main from "../Links/Main/Main";
 
 const HomePage = (props) => {
-  const [linkLocation, setLinkLocation] = useState("");
-
-  const skillsHandler = () => {
-    setLinkLocation("skills");
-  };
-  const aboutHandler = () => {
-    setLinkLocation("about");
-  };
-  const contactHandler = () => {
-    setLinkLocation("contact");
-  };
-  const pastProjectsHandler = () => {
-    setLinkLocation("pastProjects");
-  };
-
   return (
     <div className={styles["page-container"]}>
       <div className={styles["link-container"]}>
-        <SkillsLink
-          onClick={() => skillsHandler()}
-          linkLocation={linkLocation}
-        />
-        <ContactLink
-          onClick={() => contactHandler()}
-          linkLocation={linkLocation}
-        />
-        <PastProjectsLink
-          onClick={() => pastProjectsHandler()}
-          linkLocation={linkLocation}
-        />
-        <AboutLink onClick={() => aboutHandler()} linkLocation={linkLocation} />
+        <Main />
+        <About />
+        <Skills />
+        <PastProjects />
+        <Contact />
       </div>
       <div className={styles["bottom"]}>
         Welcome to <span className={styles["webName"]}>josephthedev.com</span>.
@@ -55,7 +31,6 @@ const HomePage = (props) => {
           src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
         />
       </div>
-      <Outlet />
     </div>
   );
 };

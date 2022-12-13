@@ -1,11 +1,10 @@
 body {
-  margin: 0;
+  background-color: aquamarine;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: visible;
   cursor: url("../src/components/UI/Icons/cursor.png") 7 7, auto;
 }
 

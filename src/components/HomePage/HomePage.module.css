@@ -1,36 +1,40 @@
+.color {
+  color: #d81c23;
+  color: #4fa8c2;
+  color: #d97441;
+  color: #d29849;
+  font-family: "Nanum Pen Script", cursive;
+}
+
 .page-container {
+  margin: 0;
   display: flex;
   flex-direction: column;
+  min-height: 100%;
+  min-width: 100%;
+  background-color: whitesmoke;
   overflow-x: hidden;
-  overflow-y: visible;
-  min-height: 100vh;
-  min-width: 100vw;
-  background-color: antiquewhite;
 }
 
 .link-container {
   margin: 0;
-  height: 95vh;
+  width: 100%;
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  background-color: black;
+  grid-template-rows: repeat(4, 1fr);
   border: none;
 }
 .bottom {
+  width: 100%;
   justify-content: center;
-  font-family: "Press Start 2P", cursive;
-  font-size: x-small;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 150%;
   display: flex;
   align-items: center;
-  background-color: black;
-  color: rgb(60, 170, 60);
   height: 5vh;
 }
 .webName {
   margin-left: 5px;
-  text-shadow: 2px 4px 6px rgba(60, 170, 60, 0.69);
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.69);
   border: none;
 }
 
