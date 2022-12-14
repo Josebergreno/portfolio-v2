@@ -3,7 +3,7 @@
   color: #4fa8c2;
   color: #d97441;
   color: #d29849;
-  font-family: "Quantico", sans-serif;
+  font-family: "Nanum Pen Script", cursive;
 }
 .container {
   grid-row: 2/3;
@@ -63,4 +63,15 @@
   width: 50vw;
   height: 50vw;
   transform: translate(70%, 0);
+}
+
+.about {
+  color: black;
+  font-size: 130%;
+  width: 80vw;
+  font-family: "Nanum Pen Script", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 2;
 }

@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./HomePage.module.css";
-import Skills from "../Links/Skills/Skills";
-import Contact from "../Links/Contact/Contact";
-import PastProjects from "../Links/PastProjects/PastProjects";
-import About from "../Links/About/About";
-import Main from "../Links/Main/Main";
+import Skills from "../links/skills/Skills";
+import Contact from "../links/contact/Contact";
+import PastProjects from "../links/past-projects/PastProjects";
+import About from "../links/about/About";
+import Main from "../links/main/Main";
 
 const HomePage = (props) => {
   return (
