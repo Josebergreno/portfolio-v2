@@ -9,7 +9,7 @@ const About = (props) => {
         onClick={props.onClick}
         className={styles["container"]}
       >
-        <div className={styles["about-container"]}>
+        <div className={styles["header-container"]}>
           <div className={styles["text-holder"]}>About Me</div>
         </div>
         <div className={styles["about"]}>
