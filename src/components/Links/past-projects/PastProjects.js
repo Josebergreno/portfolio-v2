@@ -3,8 +3,8 @@ import snakeGameThumbnail from "../../UI/Icons/newSnakeGameThumbnail.jpg";
 
 const PastProjects = (props) => {
   return (
-    <a
-      href="google.com"
+    <section
+      id="past-projects--section"
       onClick={props.onClick}
       className={styles["container"]}
     >
@@ -24,7 +24,7 @@ const PastProjects = (props) => {
         </a>
         <button className={styles["button"]}>next</button>
       </div>
-    </a>
+    </section>
   );
 };
 

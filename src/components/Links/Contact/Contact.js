@@ -3,8 +3,8 @@ import styles from "./Contact.module.css";
 
 const ContactLink = (props) => {
   return (
-    <a
-      href="google.com"
+    <section
+      id="contact-section"
       onClick={props.onClick}
       className={styles["container"]}
     >
@@ -57,7 +57,7 @@ const ContactLink = (props) => {
           </div>
         </div>
       </div>
-    </a>
+    </section>
   );
 };
 

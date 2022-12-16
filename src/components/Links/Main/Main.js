@@ -18,48 +18,42 @@ const Main = (props) => {
   }, [activeLetter, randomNum, splitArr]);
 
   return (
-    <>
-      <a
-        href="google.com"
-        onClick={props.onClick}
-        className={styles["container"]}
-      >
-        <nav className={styles["nav-bar"]}>
-          <a href="google.com" className={styles["nav-item"]}>
-            about
-          </a>
-          <a href="google.com" className={styles["nav-item"]}>
-            contact
-          </a>
-          <a href="google.com" className={styles["nav-item"]}>
-            skills
-          </a>
-          <a href="google.com" className={styles["nav-item"]}>
-            past-projects
-          </a>
-        </nav>
-        <div className={styles["heading-container"]}>
-          <h1 className={styles["h1"]}>
-            {headerEffect.map((val) => (
-              <span key={val} className={styles["span-container"]}>
-                {val.split("").map((val, i) => (
-                  <span
-                    className={
-                      val === activeLetter && val !== " "
-                        ? styles["flicker"]
-                        : styles["span"]
-                    }
-                    key={Math.random()}
-                  >
-                    {val}
-                  </span>
-                ))}
-              </span>
-            ))}
-          </h1>
-        </div>
-      </a>
-    </>
+    <section className={styles["container"]}>
+      <nav className={styles["nav-bar"]}>
+        <a href="#about-section" className={styles["nav-item"]}>
+          about
+        </a>
+        <a href="#skills-section" className={styles["nav-item"]}>
+          skills
+        </a>
+        <a href="#past-projects--section" className={styles["nav-item"]}>
+          past-projects
+        </a>
+        <a href="#contact-section" className={styles["nav-item"]}>
+          contact
+        </a>
+      </nav>
+      <div className={styles["heading-container"]}>
+        <h1 className={styles["h1"]}>
+          {headerEffect.map((val) => (
+            <span key={val} className={styles["span-container"]}>
+              {val.split("").map((val, i) => (
+                <span
+                  className={
+                    val === activeLetter && val !== " "
+                      ? styles["flicker"]
+                      : styles["span"]
+                  }
+                  key={Math.random()}
+                >
+                  {val}
+                </span>
+              ))}
+            </span>
+          ))}
+        </h1>
+      </div>
+    </section>
   );
 };
 
