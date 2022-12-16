@@ -1,3 +1,26 @@
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #d29849 #d97441;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #4fa8c2;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d29849;
+  border-radius: 10px;
+  border: 2px solid #d97441;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
 .color {
   color: #d81c23;
   color: #4fa8c2;
@@ -12,11 +35,15 @@
   flex-direction: column;
   min-height: 100%;
   min-width: 100%;
-  background-color: whitesmoke;
+  background-image: url(../UI/Icons/background.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   overflow-x: hidden;
 }
 
-.link-container {
+.section-container {
   margin: 0;
   width: 100%;
   display: grid;

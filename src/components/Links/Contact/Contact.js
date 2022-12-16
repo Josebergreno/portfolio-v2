@@ -26,7 +26,7 @@ const ContactLink = (props) => {
           <div className={styles["link-container"]}>
             <a
               className={styles["indiv-icon--container"]}
-              href="https://www.linkedin.com/in/joseph-bergren-300148a8"
+              href="https://www.linkedin.com/in/joseph-bergren1995"
             >
               <img
                 alt="linkedin-icon"

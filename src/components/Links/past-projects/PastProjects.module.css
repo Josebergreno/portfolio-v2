@@ -35,27 +35,19 @@
   margin: 10px;
 }
 .text-holder {
+  letter-spacing: 2px;
   color: black;
   width: 70%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 200%;
-  font-family: "Nanum Pen Script", cursive;
+  font-size: 300%;
+  font-weight: 600;
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15),
+    0px 10px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+  font-family: "Londrina Outline", cursive;
 }
-
-/* @media (max-width: 550px) {
-  .text-holder {
-    font-size: 100%;
-  }
-}
-
-@media (min-width: 551px) {
-  .text-holder {
-    font-size: 120%;
-  }
-} */
 
 .link {
   position: relative;
@@ -67,36 +59,36 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 200%;
   transition: 0.2s;
 }
 
 .snake-game--thumbnail {
   width: 25vmin;
   margin-bottom: 20px;
-  border: solid black 1px;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 .button {
   min-width: 10vmin;
+  font-family: "Nanum Pen Script", cursive;
+  background-color: transparent;
+  font-size: 200%;
   width: 20vmin;
   height: 5vmin;
   margin: 10px;
-
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  border: solid black 1px;
-  font-family: "Press Start 2p", cursive;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 5px;
+  border: none;
+  color: black;
   border-radius: 3px;
   transition: 0.2s;
 }
 .button:hover {
   transform: scale(1.1);
-}
-
-@media (max-width: 400px) {
-  .button {
-    font-size: x-small;
-  }
+  font-size: 200%;
 }
 
 .project-body {

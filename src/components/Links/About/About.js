@@ -1,5 +1,5 @@
 import styles from "./About.module.css";
-import img from "../../UI/Icons/coding-pic.png";
+// import img from "../../UI/Icons/polish-pic.png";
 
 const About = (props) => {
   return (
@@ -18,7 +18,6 @@ const About = (props) => {
         Jiu-Jitsu, and traveling the world with my wife. I also speak German,
         and am a huge dog lover.
       </div>
-      <img className={styles["coding-pic"]} alt="coding" src={img}></img>
     </section>
   );
 };

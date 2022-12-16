@@ -1,22 +1,9 @@
 import styles from "./Main.module.css";
-
-import { useEffect, useState } from "react";
+import MailIcon from "@mui/icons-material/Mail";
+import CodeIcon from "@mui/icons-material/Code";
+import headshot from "../../UI/Icons/headshot-cropped.png";
 
 const Main = (props) => {
-  const [activeLetter, setActiveLetter] = useState("");
-  const [randomNum, setRandomNum] = useState(0);
-
-  const headerEffect = ["Hi I'm", "Joe.", "Web", "Developer"];
-  const splitArr = headerEffect.join("").split("");
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRandomNum(Math.floor(Math.random() * 21) + 1);
-      setActiveLetter(splitArr[randomNum]);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [activeLetter, randomNum, splitArr]);
-
   return (
     <section className={styles["container"]}>
       <nav className={styles["nav-bar"]}>
@@ -33,28 +20,18 @@ const Main = (props) => {
           contact
         </a>
       </nav>
-      <div className={styles["heading-container"]}>
-        <h1 className={styles["h1"]}>
-          {headerEffect.map((val) => (
-            <span key={val} className={styles["span-container"]}>
-              {val.split("").map((val, i) => (
-                <span
-                  className={
-                    val === activeLetter && val !== " "
-                      ? styles["flicker"]
-                      : styles["span"]
-                  }
-                  key={Math.random()}
-                >
-                  {val}
-                </span>
-              ))}
-            </span>
-          ))}
+      <div className={styles["body"]}>
+        <h1 className={styles["header"]}>
+          <span className={styles["first-span"]}>Hey, I'm</span>
+          <span className={styles["second-span"]}>Joe.</span>
+          <span className={styles["third-span"]}>Web Developer</span>
         </h1>
+        <img alt={"Joseph"} className={styles["headshot"]} src={headshot}></img>
       </div>
     </section>
   );
 };
 
 export default Main;
+
+// from an Array, map for for duplicates

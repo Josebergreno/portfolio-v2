@@ -9,7 +9,7 @@ import Main from "../links/main/Main";
 const HomePage = (props) => {
   return (
     <div className={styles["page-container"]}>
-      <div className={styles["link-container"]}>
+      <div className={styles["section-container"]}>
         <Main />
         <About />
         <Skills />
