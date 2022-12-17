@@ -57,6 +57,16 @@
   50% {
   }
 }
+@media (max-width: 400px) {
+  .header {
+    font-size: 100%;
+  }
+}
+@media (min-width: 1000px) {
+  .header {
+    font-size: 170%;
+  }
+}
 
 .first-span {
   color: black;
@@ -349,15 +359,15 @@
 }
 @keyframes responsive {
   0% {
+    filter: blur(20px);
   }
-  30% {
+  50% {
     transform: translateX(0);
-  }
-
-  60% {
+    filter: blur(0px);
   }
   100% {
     transform: translateX(100%);
+    filter: blur(20px);
   }
 }
 .html-icon--container {
@@ -392,7 +402,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(100%);
+  transform: translate(100%) scale(0.1);
+
   animation-name: typescript;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
@@ -400,14 +411,13 @@
 @keyframes typescript {
   0% {
   }
-  30% {
-    transform: translateX(0);
+  50% {
+    transform: translateX(0) scale(1);
+    filter: drop-shadow(10px 10px 20px black);
   }
 
-  60% {
-  }
   100% {
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0.1);
   }
 }
 .javascript-icon--container {
@@ -417,7 +427,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(100%);
+  transform: translate(100%) rotate(180deg);
   animation-name: javascript;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
@@ -425,12 +435,16 @@
 @keyframes javascript {
   0% {
   }
-  30% {
-    transform: translateX(0);
+  50% {
+    transform: translateX(0) rotate(0);
+  }
+  55% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
   }
 
-  60% {
-  }
   100% {
     transform: translateX(100%);
   }

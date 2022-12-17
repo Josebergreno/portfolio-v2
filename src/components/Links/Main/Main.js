@@ -42,7 +42,7 @@ const Main = (props) => {
           : Object.values(skillsObj[counter])
       );
       setIconClass(
-        typeof Object.keys(skillsObj[counter]) === null
+        Object.keys(skillsObj[counter]) === null
           ? "invisible"
           : Object.keys(skillsObj[counter])
       );
