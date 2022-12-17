@@ -20,7 +20,7 @@ const HomePage = (props) => {
         Welcome to <span className={styles["webName"]}>josephthedev.com</span>.
         Powered by
         <img
-          alt={"react-icon"}
+          alt={"coffee-icon"}
           className={styles["icon"]}
           src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Coffee_cup_icon.svg"
         />

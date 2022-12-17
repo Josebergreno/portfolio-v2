@@ -15,13 +15,7 @@ const SkillsLink = (props) => {
 
       <div className={styles["svg-main--container"]}>
         <div className={styles["row-container"]}>
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"react-icon"}
               className={styles["icon"]}
@@ -30,24 +24,12 @@ const SkillsLink = (props) => {
             <span className={styles["under-title"]}>React</span>
           </div>
 
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img alt={"mui-icon"} className={styles["icon"]} src={muiLogo} />
             <span className={styles["under-title"]}>Material-UI</span>
           </div>
 
-          <div
-            tabIndex={0}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            reference={props.reference}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"typescript-icon"}
               className={styles["icon"]}
@@ -57,13 +39,7 @@ const SkillsLink = (props) => {
           </div>
         </div>
         <div className={styles["row-container"]}>
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"javascript-icon"}
               className={styles["icon"]}
@@ -71,13 +47,7 @@ const SkillsLink = (props) => {
             />
             <span className={styles["under-title"]}>Javascript</span>
           </div>
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"css-icon"}
               className={styles["icon"]}
@@ -85,13 +55,7 @@ const SkillsLink = (props) => {
             />
             <span className={styles["under-title"]}>CSS</span>
           </div>
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"html-icon"}
               className={styles["icon"]}
@@ -101,13 +65,7 @@ const SkillsLink = (props) => {
           </div>
         </div>
         <div className={styles["row-container"]}>
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"responsive-icon"}
               className={styles["icon"]}
@@ -115,13 +73,7 @@ const SkillsLink = (props) => {
             />
             <span className={styles["under-title"]}>Responsive Design</span>
           </div>
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"git-icon"}
               className={styles["git-icon"]}
@@ -129,13 +81,7 @@ const SkillsLink = (props) => {
             />
             <span className={styles["under-title"]}>git</span>
           </div>
-          <div
-            tabIndex={0}
-            reference={props.reference}
-            onClick={props.onClick}
-            onTouchStart={props.onClick}
-            className={styles["indiv-icon--container"]}
-          >
+          <div tabIndex={0} className={styles["indiv-icon--container"]}>
             <img
               alt={"github-icon"}
               className={styles["icon"]}
