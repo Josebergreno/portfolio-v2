@@ -13,7 +13,7 @@ const skillsObj = [
   },
   { git: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" },
   { css: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" },
-  { responsive: { responsiveIcon } },
+  { responsive: responsiveIcon },
   {
     html: "https://upload.wikimedia.org/wikipedia/commons/8/82/Devicon-html5-plain.svg",
   },
@@ -25,25 +25,34 @@ const skillsObj = [
     javascript:
       "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
   },
-  { mui: { muiLogo } },
+  { mui: muiLogo },
 ];
 
 const Main = (props) => {
   const [currentIcon, setCurrentIcon] = useState(skillsObj.react);
   const [counter, setCounter] = useState(0);
+  const [iconClass, setIconClass] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCounter((prev) => prev + 1);
-      setCurrentIcon(Object.values(skillsObj[counter]));
-      console.log(counter);
-      counter >= 9 && setCounter(0);
-      console.log(currentIcon);
+      setCurrentIcon(
+        typeof Object.values(skillsObj[counter]) === "undefined"
+          ? undefined
+          : Object.values(skillsObj[counter])
+      );
+      setIconClass(
+        typeof Object.keys(skillsObj[counter]) === null
+          ? "invisible"
+          : Object.keys(skillsObj[counter])
+      );
+
+      counter >= 8 && setCounter(0);
     }, 3000);
     return () => {
       clearInterval(interval);
     };
-  }, [counter, currentIcon]);
+  }, [counter, currentIcon, iconClass]);
 
   return (
     <section className={styles["container"]}>
@@ -71,8 +80,12 @@ const Main = (props) => {
           <div className={styles["img-container"]}>
             <img alt={"Joseph"} className={styles["headshot"]} src={headshot} />
           </div>
-          <div className={styles["icon-container"]}>
-            <img alt={"icon"} className={styles["icon"]} src={currentIcon} />
+          <div className={styles[`${iconClass}-icon--container`]}>
+            <img
+              alt={iconClass === null ? undefined : "icon"}
+              className={styles["icon"]}
+              src={currentIcon}
+            />
           </div>
         </div>
       </div>
@@ -81,5 +94,3 @@ const Main = (props) => {
 };
 
 export default Main;
-
-// from an Array, map for for duplicates
