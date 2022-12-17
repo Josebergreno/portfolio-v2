@@ -222,10 +222,6 @@
   animation-name: react;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes react {
   0% {
@@ -253,22 +249,25 @@
   animation-name: github;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes github {
   0% {
   }
-  30% {
-    transform: translateX(0) rotate(-180deg);
+  40% {
+    transform: scale(1);
+    filter: invert(0%);
+  }
+  50% {
+    transform: translateX(0) scale(1.2);
+    filter: invert(10%);
+  }
+  60% {
+    transform: scale(1);
+    filter: invert(0%);
   }
 
-  60% {
-    transform: translate(0, -40%);
-  }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%);
   }
 }
 .git-icon--container {
@@ -282,22 +281,24 @@
   animation-name: git;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes git {
   0% {
   }
-  30% {
-    transform: translateX(0) rotate(-180deg);
+  40% {
+    transform: scale(1);
+    filter: invert(0%);
+  }
+  50% {
+    transform: translateX(0) scale(1.2) rotate(5deg);
+  }
+  60% {
+    transform: scale(1) rotate(-5deg);
+    filter: invert(0%);
   }
 
-  60% {
-    transform: translate(0, -40%);
-  }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%);
   }
 }
 .css-icon--container {
@@ -311,22 +312,24 @@
   animation-name: css;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes css {
   0% {
   }
-  30% {
-    transform: translateX(0) rotate(-180deg);
+  40% {
+    transform: translateX(0) scale(1);
   }
-
+  45% {
+    transform: skew(5deg, 5deg) scale(1.1);
+  }
+  55% {
+    transform: skew(-5deg, -5deg) scale(1.1);
+  }
   60% {
-    transform: translate(0, -40%);
+    transform: skew(0, 0) scale(1);
   }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%);
   }
 }
 .responsive-icon--container {
@@ -340,7 +343,7 @@
   animation-name: responsive;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
+  animation-direction: normal;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
@@ -348,14 +351,13 @@
   0% {
   }
   30% {
-    transform: translateX(0) rotate(-180deg);
+    transform: translateX(0);
   }
 
   60% {
-    transform: translate(0, -40%);
   }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%);
   }
 }
 .html-icon--container {
@@ -365,26 +367,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translate(100%);
+  transform: translate(100%) rotate(-15deg);
   animation-name: html;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes html {
   0% {
+    opacity: 0%;
   }
-  30% {
-    transform: translateX(0) rotate(-180deg);
-  }
-
-  60% {
-    transform: translate(0, -40%);
+  50% {
+    transform: translateX(0) scale(1.1);
+    opacity: 100%;
   }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%) rotate(15deg);
+    opacity: 0%;
   }
 }
 .typescript-icon--container {
@@ -398,22 +396,18 @@
   animation-name: typescript;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes typescript {
   0% {
   }
   30% {
-    transform: translateX(0) rotate(-180deg);
+    transform: translateX(0);
   }
 
   60% {
-    transform: translate(0, -40%);
   }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%);
   }
 }
 .javascript-icon--container {
@@ -427,22 +421,18 @@
   animation-name: javascript;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes javascript {
   0% {
   }
   30% {
-    transform: translateX(0) rotate(-180deg);
+    transform: translateX(0);
   }
 
   60% {
-    transform: translate(0, -40%);
   }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%);
   }
 }
 .mui-icon--container {
@@ -451,39 +441,33 @@
   width: 50vw;
   display: flex;
   align-items: center;
+
   justify-content: center;
   transform: translate(100%);
   animation-name: mui;
   animation-timing-function: ease-in-out;
   animation-duration: 3s;
-  animation-direction: alternate-reverse;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
 }
 @keyframes mui {
   0% {
   }
-  30% {
-    transform: translateX(0) rotate(-180deg);
+  50% {
+    transform: translateX(0) rotate3d(0, 0.5, 0, -1turn);
   }
 
-  60% {
-    transform: translate(0, -40%);
-  }
   100% {
-    transform: translateX(100%) rotate(-180deg);
+    transform: translateX(100%) rotate3d(0, 0.5, 0, -1turn);
   }
 }
 
 .icon {
   z-index: 1;
-  width: 20vmin;
+  width: 15vmin;
   position: relative;
 }
 
 .bottom-row--container {
   z-index: 1;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
