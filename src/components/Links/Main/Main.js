@@ -2,28 +2,49 @@ import styles from "./Main.module.css";
 import headshot from "../../UI/Icons/headshot-cropped.png";
 import responsiveIcon from "../../UI/Icons/responsive.svg";
 import muiLogo from "../../../components/UI/Icons/material-ui.svg";
-
-const Main = (props) => {
-  const skillsArr = {
+import { useState, useEffect } from "react";
+const skillsObj = [
+  {
+    react: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+  },
+  {
     github:
       "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
-    react:
-      "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
-    git: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
-    css: (
-      <>
-        https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg
-      </>
-    ),
-    responsive: { responsiveIcon },
+  },
+  { git: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" },
+  { css: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" },
+  { responsive: { responsiveIcon } },
+  {
     html: "https://upload.wikimedia.org/wikipedia/commons/8/82/Devicon-html5-plain.svg",
-    typescript: (
-      <>
-        https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg
-      </>
-    ),
-    javascript: "hello",
-  };
+  },
+  {
+    typescript:
+      "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+  },
+  {
+    javascript:
+      "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
+  },
+  { mui: { muiLogo } },
+];
+
+const Main = (props) => {
+  const [currentIcon, setCurrentIcon] = useState(skillsObj.react);
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCounter((prev) => prev + 1);
+      setCurrentIcon(Object.values(skillsObj[counter]));
+      console.log(counter);
+      counter >= 9 && setCounter(0);
+      console.log(currentIcon);
+    }, 3000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [counter, currentIcon]);
+
   return (
     <section className={styles["container"]}>
       <nav className={styles["nav-bar"]}>
@@ -51,11 +72,7 @@ const Main = (props) => {
             <img alt={"Joseph"} className={styles["headshot"]} src={headshot} />
           </div>
           <div className={styles["icon-container"]}>
-            <img
-              alt={"react-icon"}
-              className={styles["icon"]}
-              src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-            />
+            <img alt={"icon"} className={styles["icon"]} src={currentIcon} />
           </div>
         </div>
       </div>

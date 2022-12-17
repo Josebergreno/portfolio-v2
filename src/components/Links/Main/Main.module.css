@@ -218,7 +218,7 @@
   transform: translate(100%);
   animation-name: icon;
   animation-timing-function: ease-in-out;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-delay: 3s;
   animation-direction: alternate-reverse;
   animation-iteration-count: infinite;
