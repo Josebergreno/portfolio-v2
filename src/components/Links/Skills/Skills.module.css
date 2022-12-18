@@ -66,10 +66,11 @@
 
 .indiv-icon--container:hover {
   transform: scale(1.05);
+  background-color: rgba(210, 152, 73, 0.3);
 }
 .indiv-icon--container:focus {
   transform: scale(1.05);
-  background-color: blue;
+  background-color: rgba(210, 152, 73, 0.3);
 }
 .icon {
   width: 9vmin;

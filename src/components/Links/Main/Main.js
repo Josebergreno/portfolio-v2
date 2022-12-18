@@ -2,7 +2,9 @@ import styles from "./Main.module.css";
 import headshot from "../../UI/Icons/headshot-cropped.png";
 import responsiveIcon from "../../UI/Icons/responsive.svg";
 import muiLogo from "../../../components/UI/Icons/material-ui.svg";
+import arrowDown from "../../UI/Icons/down-arrow.svg";
 import { useState, useEffect } from "react";
+
 const skillsObj = [
   {
     react: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
@@ -32,6 +34,7 @@ const Main = (props) => {
   const [currentIcon, setCurrentIcon] = useState(skillsObj.react);
   const [counter, setCounter] = useState(0);
   const [iconClass, setIconClass] = useState(null);
+  const [arrowVisible, setArrowVisible] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -46,7 +49,7 @@ const Main = (props) => {
           ? "invisible"
           : Object.keys(skillsObj[counter])
       );
-
+      setArrowVisible(true);
       counter >= 8 && setCounter(0);
     }, 3000);
     return () => {
@@ -76,9 +79,15 @@ const Main = (props) => {
           <span className={styles["second-span"]}>Joe.</span>
           <span className={styles["third-span"]}>Web Developer</span>
         </h1>
+
         <div className={styles["bottom-row--container"]}>
           <div className={styles["img-container"]}>
             <img alt={"Joseph"} className={styles["headshot"]} src={headshot} />
+            <img
+              alt={"arrow"}
+              src={arrowDown}
+              className={arrowVisible ? styles["arrow"] : styles["invisible"]}
+            />
           </div>
           <div className={styles[`${iconClass}-icon--container`]}>
             <img

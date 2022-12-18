@@ -73,6 +73,9 @@
 
 .button {
   min-width: 10vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Nanum Pen Script", cursive;
   background-color: transparent;
   font-size: 200%;
@@ -91,10 +94,38 @@
   font-size: 200%;
 }
 
+@media (max-width: 700px) {
+  .button {
+    font-size: 175%;
+    width: 22vmin;
+    height: 6vmin;
+  }
+  .link {
+    font-size: 175%;
+  }
+  .snake-game--thumbnail {
+    width: 30vmin;
+  }
+}
+
 .project-body {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+}
+
+@media (max-width: 400px) {
+  .text-holder {
+    font-size: 250%;
+  }
+  .link {
+    font-size: 150%;
+  }
+}
+@media (max-width: 350px) {
+  .text-holder {
+    font-size: 225%;
+  }
 }

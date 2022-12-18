@@ -47,26 +47,26 @@
   align-items: center;
   font-size: 300%;
   font-weight: 600;
-  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15),
+  text-shadow: 0px 3px 0px #4fa8c2, 0px 14px 10px rgba(0, 0, 0, 0.15),
     0px 10px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
   font-family: "Londrina Outline", cursive;
 }
 
 .how-to--contact {
   font-family: "Nanum Pen Script", cursive;
-  font-size: 150%;
+  font-size: 200%;
   color: black;
 
   width: 80%;
 }
 
 .email-href {
-  color: #d81c23;
+  color: blue;
   transition: 0.2s;
 }
 .email-href:hover {
   transform: scale(2);
-  color: blue;
+  color: #d81c23;
 }
 .link-container {
   width: 100%;
@@ -99,14 +99,6 @@
   transform: scale(1.2);
 }
 
-/* @media (max-width: 500px) {
-  .icon {
-    width: 15vmin;
-  }
-  .github-icon {
-    width: 15vmin;
-  }
-} */
 .body-container {
   padding: 10px;
   display: flex;
@@ -114,4 +106,9 @@
   justify-content: space-around;
   align-items: center;
   height: 70%;
+}
+@media (max-width: 500px) {
+  .icon {
+    width: 15vmin;
+  }
 }

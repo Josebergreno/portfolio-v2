@@ -54,3 +54,43 @@
   align-items: center;
   line-height: 2;
 }
+
+@media (max-width: 500px) {
+  .about {
+    font-size: 175%;
+  }
+}
+
+@media (max-width: 400px) {
+  .about {
+    font-size: 160%;
+  }
+}
+
+.top {
+  z-index: 100;
+  position: sticky;
+  top: 0px;
+  border: none;
+  width: 50%;
+
+  /* min-width: 10vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Pen Script", cursive;
+  background-color: whitesmoke;
+  font-size: 100%;
+  width: 20vmin;
+  height: 5vmin;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 20px;
+  border: none;
+  color: black;
+  margin-top: 10%;
+  transition: 0.2s; */
+}
+
+.top:hover {
+  transform: scale(1.1);
+}

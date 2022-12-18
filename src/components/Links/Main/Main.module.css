@@ -57,14 +57,10 @@
   50% {
   }
 }
-@media (max-width: 400px) {
+
+@media (max-width: 760px) {
   .header {
-    font-size: 100%;
-  }
-}
-@media (min-width: 1000px) {
-  .header {
-    font-size: 170%;
+    font-size: 110%;
   }
 }
 
@@ -190,10 +186,8 @@
 .headshot {
   position: relative;
   z-index: 2;
-  height: 100%;
-  aspect-ratio: 1/1;
+  height: 50vmin;
   background-color: transparent;
-
   transform: translateX(-100%);
   opacity: 0%;
   border-radius: 0 0 0 25px;
@@ -215,10 +209,38 @@
   height: 100%;
   width: 50vw;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
+
+.arrow {
+  width: 10vmin;
+  position: absolute;
+  z-index: 4;
+  transform: translate(600%, -50%);
+  animation-name: arrow;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+
+  animation-iteration-count: infinite;
+}
+@keyframes arrow {
+  0% {
+    transform: translate(600%);
+  }
+  50% {
+    transform: translate(600%, -60%) scale(1.1);
+    filter: invert(20%);
+  }
+  100% {
+    transform: translate(600%);
+  }
+}
+
 .invisible {
   display: hidden;
+  width: 1px;
+  height: 1px;
 }
 
 .react-icon--container {

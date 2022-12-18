@@ -17,8 +17,8 @@ const HomePage = (props) => {
         <Contact />
       </div>
       <div className={styles["bottom"]}>
-        Welcome to <span className={styles["webName"]}>josephthedev.com</span>.
-        Powered by
+        Welcome to <span className={styles["webName"]}>josephthedev.com</span>
+        . Powered by
         <img
           alt={"coffee-icon"}
           className={styles["icon"]}
