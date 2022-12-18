@@ -121,3 +121,13 @@
     font-size: 40%;
   }
 } */
+
+.description {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 130%;
+  height: 100%;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
