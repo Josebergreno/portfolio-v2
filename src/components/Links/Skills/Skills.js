@@ -2,8 +2,14 @@ import styles from "./Skills.module.css";
 import responsiveIcon from "../../UI/Icons/responsive.svg";
 import muiLogo from "../../../components/UI/Icons/material-ui.svg";
 import { useState } from "react";
+import { useInView } from "react-intersection-observer";
 
 const SkillsLink = (props) => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  });
+  console.log(inView);
+
   const [clicked, setClicked] = useState(false);
   const clickHandler = (e) => {
     setClicked(
@@ -19,7 +25,14 @@ const SkillsLink = (props) => {
       onClick={props.onClick}
     >
       <div className={styles["skills-container"]}>
-        <div className={styles["text-holder"]}>Skills</div>
+        <div
+          ref={ref}
+          className={
+            inView === true ? styles["text-holder"] : styles["invisible"]
+          }
+        >
+          Skills
+        </div>
       </div>
 
       <div className={styles["svg-main--container"]}>
