@@ -1,4 +1,4 @@
-import HomePage from "./components/home-page/HomePage";
+import HomePage from "./components/homepage/HomePage";
 
 const App = () => {
   return <HomePage />;
