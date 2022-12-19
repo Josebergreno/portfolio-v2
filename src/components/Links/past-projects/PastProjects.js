@@ -1,6 +1,6 @@
 import styles from "./PastProjects.module.css";
-import snakeGameThumbnail from "../../UI/Icons/newSnakeGameThumbnail.jpg";
-import portfolioThumbnail from "../../UI/Icons/portfolio-thumbnail.jpg";
+import snakeGameThumbnail from "../../ui/icons/newSnakeGameThumbnail.jpg";
+import portfolioThumbnail from "../../ui/icons/portfolio-thumbnail.jpg";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 

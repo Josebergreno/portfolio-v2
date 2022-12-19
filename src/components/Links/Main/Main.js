@@ -1,8 +1,8 @@
 import styles from "./Main.module.css";
-import headshot from "../../UI/Icons/headshot-cropped.png";
-import responsiveIcon from "../../UI/Icons/responsive.svg";
-import muiLogo from "../../../components/UI/Icons/material-ui.svg";
-import arrowDown from "../../UI/Icons/down-arrow.svg";
+import headshot from "../../ui/icons/headshot-cropped.png";
+import responsiveIcon from "../../ui/icons/responsive.svg";
+import muiLogo from "../../../components/ui/icons/material-ui.svg";
+import arrowDown from "../../ui/icons/down-arrow.svg";
 import { useState, useEffect } from "react";
 
 const skillsObj = [

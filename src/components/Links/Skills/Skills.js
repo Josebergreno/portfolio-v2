@@ -1,6 +1,6 @@
 import styles from "./Skills.module.css";
-import responsiveIcon from "../../UI/Icons/responsive.svg";
-import muiLogo from "../../../components/UI/Icons/material-ui.svg";
+import responsiveIcon from "../../ui/icons/responsive.svg";
+import muiLogo from "../../../components/ui/icons/material-ui.svg";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
