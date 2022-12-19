@@ -7,7 +7,7 @@ import { useState } from "react";
 const PastProjects = () => {
   const projects = [
     [
-      "Portfolio Website V1",
+      "Portfolio Website V-One",
       portfolioThumbnail,
       "https://www.josephthedev.com",
     ],
@@ -16,16 +16,18 @@ const PastProjects = () => {
   const [currentTitle, setCurrentTitle] = useState(projects[0][0]);
   const [currentThumbnail, setCurrentThumbnail] = useState(projects[0][1]);
   const [currentHref, setCurrentHref] = useState(projects[0][2]);
+  const [currentClass, setCurrentClass] = useState(styles["thumbnail"]);
   const [titleRef, titleInView] = useInView({
     threshold: 0,
     triggerOnce: true,
   });
-  const nextClickHandler = () => {
+  const nextClickHandler = (e) => {
     setCurrentHref(projects[1][2]);
     setCurrentTitle(projects[1][0]);
     setCurrentThumbnail(projects[1][1]);
+    setCurrentClass(styles["fade-in"]);
   };
-  const backClickHandler = () => {
+  const backClickHandler = (e) => {
     setCurrentHref(projects[0][2]);
     setCurrentTitle(projects[0][0]);
     setCurrentThumbnail(projects[0][1]);
@@ -50,11 +52,11 @@ const PastProjects = () => {
         </button>
         <a href={currentHref} className={styles["link"]}>
           <img
-            className={styles["thumbnail"]}
+            className={currentClass}
             alt="thumbnail"
             src={currentThumbnail}
           ></img>
-          {currentTitle}
+          <span className={styles["under-title"]}>{currentTitle}</span>
         </a>
         <button onClick={nextClickHandler} className={styles["button"]}>
           next
