@@ -1,18 +1,37 @@
 import styles from "./PastProjects.module.css";
 import snakeGameThumbnail from "../../UI/Icons/newSnakeGameThumbnail.jpg";
+import portfolioThumbnail from "../../UI/Icons/portfolio-thumbnail.jpg";
 import { useInView } from "react-intersection-observer";
+import { useState } from "react";
 
-const PastProjects = (props) => {
+const PastProjects = () => {
+  const projects = [
+    [
+      "Portfolio Website V1",
+      portfolioThumbnail,
+      "https://www.josephthedev.com",
+    ],
+    ["Snake Game", snakeGameThumbnail, "https://sn8ke-game.netlify.app/"],
+  ];
+  const [currentTitle, setCurrentTitle] = useState(projects[0][0]);
+  const [currentThumbnail, setCurrentThumbnail] = useState(projects[0][1]);
+  const [currentHref, setCurrentHref] = useState(projects[0][2]);
   const [titleRef, titleInView] = useInView({
     threshold: 0,
     triggerOnce: true,
   });
+  const nextClickHandler = () => {
+    setCurrentHref(projects[1][2]);
+    setCurrentTitle(projects[1][0]);
+    setCurrentThumbnail(projects[1][1]);
+  };
+  const backClickHandler = () => {
+    setCurrentHref(projects[0][2]);
+    setCurrentTitle(projects[0][0]);
+    setCurrentThumbnail(projects[0][1]);
+  };
   return (
-    <section
-      id="past-projects--section"
-      onClick={props.onClick}
-      className={styles["container"]}
-    >
+    <section id="past-projects--section" className={styles["container"]}>
       <div className={styles["header-container"]}>
         <div
           ref={titleRef}
@@ -26,16 +45,20 @@ const PastProjects = (props) => {
         ref={titleRef}
         className={titleInView ? styles["project-body"] : styles["invisible"]}
       >
-        <button className={styles["button"]}>back</button>
-        <a href="https://sn8ke-game.netlify.app/" className={styles["link"]}>
+        <button onClick={backClickHandler} className={styles["button"]}>
+          back
+        </button>
+        <a href={currentHref} className={styles["link"]}>
           <img
-            className={styles["snake-game--thumbnail"]}
-            alt="snake-game"
-            src={snakeGameThumbnail}
+            className={styles["thumbnail"]}
+            alt="thumbnail"
+            src={currentThumbnail}
           ></img>
-          Snake Game
+          {currentTitle}
         </a>
-        <button className={styles["button"]}>next</button>
+        <button onClick={nextClickHandler} className={styles["button"]}>
+          next
+        </button>
       </div>
     </section>
   );
