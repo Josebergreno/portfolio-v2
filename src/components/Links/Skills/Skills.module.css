@@ -45,26 +45,24 @@
   animation-timing-function: ease-in-out;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
-
   animation-iteration-count: 1;
 }
 @keyframes fade-in {
   0% {
     opacity: 0%;
-    transform: translate(-100%);
+    transform: translate(-100%) scale(0.1);
   }
   50% {
     opacity: 100%;
     transform: translate(0);
   }
-  91% {
-    transform: scale(1.1);
-  }
 }
 
 .invisible {
-  width: 1px;
-  height: 1px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: transparent;
 }
 
 .svg-main--container {
@@ -113,6 +111,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  animation-name: fade-in;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .under-title {

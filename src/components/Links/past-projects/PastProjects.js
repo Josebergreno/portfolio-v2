@@ -1,7 +1,12 @@
 import styles from "./PastProjects.module.css";
 import snakeGameThumbnail from "../../UI/Icons/newSnakeGameThumbnail.jpg";
+import { useInView } from "react-intersection-observer";
 
 const PastProjects = (props) => {
+  const [titleRef, titleInView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
   return (
     <section
       id="past-projects--section"
@@ -9,10 +14,18 @@ const PastProjects = (props) => {
       className={styles["container"]}
     >
       <div className={styles["header-container"]}>
-        <div className={styles["text-holder"]}>Past projects</div>
+        <div
+          ref={titleRef}
+          className={titleInView ? styles["text-holder"] : styles["invisible"]}
+        >
+          Past Projects
+        </div>
       </div>
 
-      <div className={styles["project-body"]}>
+      <div
+        ref={titleRef}
+        className={titleInView ? styles["project-body"] : styles["invisible"]}
+      >
         <button className={styles["button"]}>back</button>
         <a href="https://sn8ke-game.netlify.app/" className={styles["link"]}>
           <img

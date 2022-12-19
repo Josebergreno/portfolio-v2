@@ -5,10 +5,22 @@ import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 const SkillsLink = (props) => {
-  const [ref, inView] = useInView({
+  const [titleRef, titleInView] = useInView({
     threshold: 0,
+    triggerOnce: true,
   });
-  console.log(inView);
+  const [firstRowRef, firstRowInView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+  const [secondRowRef, secondRowInView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+  const [thirdRowRef, thirdRowInView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
 
   const [clicked, setClicked] = useState(false);
   const clickHandler = (e) => {
@@ -19,24 +31,23 @@ const SkillsLink = (props) => {
     );
   };
   return (
-    <section
-      id="skills-section"
-      className={styles["container"]}
-      onClick={props.onClick}
-    >
+    <section id="skills-section" className={styles["container"]}>
       <div className={styles["skills-container"]}>
         <div
-          ref={ref}
-          className={
-            inView === true ? styles["text-holder"] : styles["invisible"]
-          }
+          ref={titleRef}
+          className={titleInView ? styles["text-holder"] : styles["invisible"]}
         >
           Skills
         </div>
       </div>
 
       <div className={styles["svg-main--container"]}>
-        <div className={styles["row-container"]}>
+        <div
+          ref={firstRowRef}
+          className={
+            firstRowInView ? styles["row-container"] : styles["invisible"]
+          }
+        >
           <div className={styles["indiv-icon--container"]}>
             <img
               alt={"react-icon"}
@@ -76,7 +87,12 @@ const SkillsLink = (props) => {
             <span className={styles["under-title"]}>Typescript</span>
           </div>
         </div>
-        <div className={styles["row-container"]}>
+        <div
+          ref={secondRowRef}
+          className={
+            secondRowInView ? styles["row-container"] : styles["invisible"]
+          }
+        >
           <div className={styles["indiv-icon--container"]}>
             <img
               alt={"javascript-icon"}
@@ -102,7 +118,12 @@ const SkillsLink = (props) => {
             <span className={styles["under-title"]}>HTML</span>
           </div>
         </div>
-        <div className={styles["row-container"]}>
+        <div
+          ref={thirdRowRef}
+          className={
+            thirdRowInView ? styles["row-container"] : styles["invisible"]
+          }
+        >
           <div className={styles["indiv-icon--container"]}>
             <img
               alt={"responsive-icon"}
