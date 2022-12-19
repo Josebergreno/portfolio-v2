@@ -9,7 +9,7 @@ const PastProjects = () => {
     [
       "Portfolio Website V-One",
       portfolioThumbnail,
-      "https://www.josephthedev.com",
+      "https://josephthedev-v1.netlify.app/",
     ],
     ["Snake Game", snakeGameThumbnail, "https://sn8ke-game.netlify.app/"],
   ];
