@@ -141,3 +141,19 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 750px) {
+  .description {
+    font-size: 100%;
+  }
+}
+@media (min-width: 1500px) {
+  .description {
+    font-size: 200%;
+  }
+}
+
+@media (max-width: 400px) {
+  .description {
+    font-size: 90%;
+  }
+}
