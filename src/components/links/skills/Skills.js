@@ -22,7 +22,7 @@ const SkillsLink = (props) => {
     triggerOnce: true,
   });
 
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState("");
   const clickHandler = (e) => {
     setClicked(
       e.target.className.includes("indiv-icon--container")
@@ -69,7 +69,6 @@ const SkillsLink = (props) => {
               </div>
             )}
           </div>
-          ;
           <div
             onClick={clickHandler}
             className={styles["indiv-icon--container"]}

@@ -135,6 +135,16 @@
     width: 30vmin;
   }
 }
+@media (max-width: 550px) {
+  .under-title {
+    font-size: 90%;
+  }
+}
+@media (max-width: 550px) {
+  .under-title {
+    font-size: 80%;
+  }
+}
 
 .project-body {
   width: 100%;

@@ -6,7 +6,7 @@ import PastProjects from "../links/past-projects/PastProjects.js";
 import About from "../links/about/About.js";
 import Main from "../links/main/Main.js";
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
     <div className={styles["page-container"]}>
       <div className={styles["section-container"]}>
@@ -17,7 +17,7 @@ const HomePage = (props) => {
         <Contact />
       </div>
       <div className={styles["bottom"]}>
-        Welcome to test{" "}
+        Welcome to
         <span className={styles["webName"]}>josephthedev.com</span>
         . Powered by
         <img

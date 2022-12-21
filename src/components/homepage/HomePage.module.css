@@ -21,13 +21,6 @@
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.color {
-  color: #d81c23;
-  color: #4fa8c2;
-  color: #d97441;
-  color: #d29849;
-  font-family: "Nanum Pen Script", cursive;
-}
 
 .page-container {
   margin: 0;
@@ -36,10 +29,6 @@
   min-height: 100%;
   min-width: 100%;
   background-image: url(../ui/icons/prism.svg);
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;*/
   overflow-x: hidden;
 }
 
@@ -73,11 +62,11 @@
 
 @media (max-width: 500px) {
   .bottom {
-    font-size: 50%;
+    font-size: 120%;
   }
 }
 @media (max-width: 400px) {
   .bottom {
-    font-size: 40%;
+    font-size: 110%;
   }
 }
