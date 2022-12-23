@@ -1,11 +1,3 @@
-.color {
-  color: #d81c23;
-  color: #4fa8c2;
-  color: #d97441;
-  color: #d29849;
-  font-family: "Nanum Pen Script", cursive;
-}
-
 .container {
   background-color: transparent;
   z-index: 1;
