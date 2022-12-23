@@ -1,0 +1,257 @@
+.react-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%);
+  animation-name: react;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes react {
+  0% {
+  }
+  30% {
+    transform: translateX(0) rotate(-180deg);
+  }
+
+  60% {
+    transform: translate(0, -40%);
+  }
+  100% {
+    transform: translateX(100%) rotate(-180deg);
+  }
+}
+
+.github-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%);
+  animation-name: github;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes github {
+  0% {
+  }
+  40% {
+    transform: scale(1);
+    filter: invert(0%);
+  }
+  50% {
+    transform: translateX(0) scale(1.2);
+    filter: invert(10%);
+  }
+  60% {
+    transform: scale(1);
+    filter: invert(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+.git-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%);
+  animation-name: git;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes git {
+  0% {
+  }
+  40% {
+    transform: scale(1);
+    filter: invert(0%);
+  }
+  50% {
+    transform: translateX(0) scale(1.2) rotate(5deg);
+  }
+  60% {
+    transform: scale(1) rotate(-5deg);
+    filter: invert(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+.css-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%);
+  animation-name: css;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes css {
+  0% {
+  }
+  40% {
+    transform: translateX(0) scale(1);
+  }
+  45% {
+    transform: skew(5deg, 5deg) scale(1.1);
+  }
+  55% {
+    transform: skew(-5deg, -5deg) scale(1.1);
+  }
+  60% {
+    transform: skew(0, 0) scale(1);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.responsive-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%);
+  animation-name: responsive;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes responsive {
+  0% {
+    filter: blur(20px);
+  }
+  50% {
+    transform: translateX(0);
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(100%);
+    filter: blur(20px);
+  }
+}
+.html-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%) rotate(-15deg);
+  animation-name: html;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes html {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    transform: translateX(0) scale(1.1);
+    opacity: 100%;
+  }
+  100% {
+    transform: translateX(100%) rotate(15deg);
+    opacity: 0%;
+  }
+}
+.typescript-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%) scale(0.1);
+  animation-name: typescript;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes typescript {
+  0% {
+  }
+  50% {
+    transform: translateX(0) scale(1);
+    filter: drop-shadow(10px 10px 20px black);
+  }
+
+  100% {
+    transform: translateX(100%) scale(0.1);
+  }
+}
+.javascript-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(100%) rotate(180deg);
+  animation-name: javascript;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes javascript {
+  0% {
+  }
+  50% {
+    transform: translateX(0) rotate(0);
+  }
+  55% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+.mui-icon--container {
+  margin: 0;
+  height: 100%;
+  width: 50vw;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  transform: translate(100%);
+  animation-name: mui;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+}
+@keyframes mui {
+  0% {
+  }
+  50% {
+    transform: translateX(0) rotate3d(0, 0.5, 0, -1turn);
+  }
+
+  100% {
+    transform: translateX(100%) rotate3d(0, 0.5, 0, -1turn);
+  }
+}
+
+.icon {
+  z-index: 1;
+  width: 15vmin;
+  position: relative;
+}

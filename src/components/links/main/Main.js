@@ -3,6 +3,10 @@ import headshot from "../../ui/icons/headshot-cropped.png";
 import responsiveIcon from "../../ui/icons/responsive.svg";
 import muiLogo from "../../../components/ui/icons/material-ui.svg";
 import arrowDown from "../../ui/icons/down-arrow.svg";
+import SkillsAnimations from "../main/icon-animations/SkillsAnimations";
+import NavBar from "./nav-bar/NavBar";
+import Header from "./header/Header";
+import ImageSlideIn from "./image-slide-in/ImageSlideIn";
 import { useState, useEffect } from "react";
 
 const skillsObj = [
@@ -59,43 +63,17 @@ const Main = (props) => {
 
   return (
     <section className={styles["container"]}>
-      <nav className={styles["nav-bar"]}>
-        <a href="#about-section" className={styles["nav-item"]}>
-          about
-        </a>
-        <a href="#skills-section" className={styles["nav-item"]}>
-          skills
-        </a>
-        <a href="#past-projects--section" className={styles["nav-item"]}>
-          past-projects
-        </a>
-        <a href="#contact-section" className={styles["nav-item"]}>
-          contact
-        </a>
-      </nav>
+      <NavBar />
       <div className={styles["body"]}>
-        <h1 className={styles["header"]}>
-          <span className={styles["first-span"]}>Hey, I'm</span>
-          <span className={styles["second-span"]}>Joe.</span>
-          <span className={styles["third-span"]}>Web Developer</span>
-        </h1>
+        <Header />
 
         <div className={styles["bottom-row--container"]}>
-          <div className={styles["img-container"]}>
-            <img alt={"Joseph"} className={styles["headshot"]} src={headshot} />
-            <img
-              alt={"arrow"}
-              src={arrowDown}
-              className={arrowVisible ? styles["arrow"] : styles["invisible"]}
-            />
-          </div>
-          <div className={styles[`${iconClass}-icon--container`]}>
-            <img
-              alt={iconClass === null ? undefined : "icon"}
-              className={styles["icon"]}
-              src={currentIcon}
-            />
-          </div>
+          <ImageSlideIn
+            arrowVisible={arrowVisible}
+            arrowDown={arrowDown}
+            headshot={headshot}
+          />
+          <SkillsAnimations iconClass={iconClass} currentIcon={currentIcon} />
         </div>
       </div>
     </section>
