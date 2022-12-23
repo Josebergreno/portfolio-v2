@@ -5,6 +5,7 @@ import Skills from "../links/skills/Skills.js";
 import PastProjects from "../links/past-projects/PastProjects.js";
 import About from "../links/about/About.js";
 import Main from "../links/main/Main.js";
+import PageBottom from "./page-bottom/PageBottom";
 
 const HomePage = () => {
   return (
@@ -16,22 +17,7 @@ const HomePage = () => {
         <PastProjects />
         <Contact />
       </div>
-      <div className={styles["bottom"]}>
-        Welcome to
-        <span className={styles["webName"]}>josephthedev.com</span>
-        . Powered by
-        <img
-          alt={"coffee-icon"}
-          className={styles["icon"]}
-          src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Coffee_cup_icon.svg"
-        />
-        and
-        <img
-          alt={"react-icon"}
-          className={styles["icon"]}
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-        />
-      </div>
+      <PageBottom />
     </div>
   );
 };

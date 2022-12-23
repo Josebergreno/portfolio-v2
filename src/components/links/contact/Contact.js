@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Contact.module.css";
+import CustomForm from "./form/CustomForm";
 import { useInView } from "react-intersection-observer";
 const ContactLink = (props) => {
   const [titleRef, titleInView] = useInView({
@@ -14,6 +15,7 @@ const ContactLink = (props) => {
     threshold: 0,
     triggerOnce: true,
   });
+
   return (
     <section id="contact-section" className={styles["container"]}>
       <div className={styles["header-container"]}>
@@ -31,13 +33,8 @@ const ContactLink = (props) => {
             bodyInView ? styles["how-to--contact"] : styles["invisible"]
           }
         >
-          I can be contacted via e-mail by clicking{" "}
-          <a
-            className={styles["email-href"]}
-            href="mailto:bergren.bergren@yahoo.com"
-          >
-            here
-          </a>{" "}
+          I can be contacted by filling out the form below
+          <CustomForm />
           or on the following platforms. Check me out on GitHub too!
         </div>
         <div className={styles["link-container--parent"]}>

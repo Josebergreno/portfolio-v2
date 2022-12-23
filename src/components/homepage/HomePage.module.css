@@ -39,34 +39,3 @@
   grid-template-rows: repeat(4, 1fr);
   border: none;
 }
-.bottom {
-  width: 100%;
-  justify-content: center;
-  font-family: "Nanum Pen Script", cursive;
-  font-size: 150%;
-  display: flex;
-  align-items: center;
-  height: 5vh;
-}
-.webName {
-  margin-left: 5px;
-  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.69);
-  border: none;
-}
-
-.icon {
-  height: 3vmin;
-  margin-left: 3px;
-  margin-right: 3px;
-}
-
-@media (max-width: 500px) {
-  .bottom {
-    font-size: 120%;
-  }
-}
-@media (max-width: 400px) {
-  .bottom {
-    font-size: 110%;
-  }
-}
