@@ -3,7 +3,7 @@ import headshot from "../../ui/icons/headshot-cropped.png";
 import responsiveIcon from "../../ui/icons/responsive.svg";
 import muiLogo from "../../../components/ui/icons/material-ui.svg";
 import arrowDown from "../../ui/icons/down-arrow.svg";
-import SkillsAnimations from "../main/icon-animations/SkillsAnimations";
+import SkillsAnimations from "./icon-animations/SkillsAnimations";
 import NavBar from "./nav-bar/NavBar";
 import Header from "./header/Header";
 import ImageSlideIn from "./image-slide-in/ImageSlideIn";
