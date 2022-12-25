@@ -1,52 +1,66 @@
 import React from "react";
 import styles from "./CustomForm.module.css";
 import SendIcon from "@mui/icons-material/Send";
-import { useState, useRef } from "react";
-import { refType } from "@mui/utils";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 const CustomForm = () => {
-  const subjectInputRef = useRef("");
-  const emailInputRef = useRef("");
-  const bodyInputRef = useRef("");
   const [subjectInputState, setSubjectInputState] = useState("");
-  const [emailInputState, setEmailInputState] = useState("");
+  const [userEmailInputState, setUserEmailInputState] = useState("");
   const [bodyInputState, setBodyInputState] = useState("");
-
+  const [userNameInputState, setUserNameInputState] = useState("");
+  const [formSent, setFormSent] = useState(false);
+  const myEmail = "bergren.bergren@yahoo.com";
   const clickHandler = (e) => {
-    console.log(e.target);
+    // console.log(e.target.id);
   };
+  console.log(process.env);
 
   const blurHandler = (e) => {
-    // validation
-    console.log(e.target.value);
+    if (e.target.id === "subject") {
+      setSubjectInputState(e.target.value);
+      console.log(e.target.value);
+    }
+    if (e.target.id === "body") {
+      setBodyInputState(e.target.value);
+      console.log(e.target.value);
+    }
+    if (e.target.id === "userEmail") {
+      setEmailInputState(e.target.value);
+      console.log(e.target.value);
+    }
+    if (e.target.id === "userName") {
+      userNameInputState(e.target.value);
+      console.log(e.target.value);
+    }
   };
 
-  const sendEmail = async () => {
-    const url = "https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send";
-
-    const options = {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        "X-RapidAPI-Key": "b123967923msh19bc23c13dee912p17e95bjsn19b6a6d19eb1",
-        "X-RapidAPI-Host": "rapidprod-sendgrid-v1.p.rapidapi.com",
-      },
-      body: '{"personalizations":[{"to":[{"email":"john@example.com"}],"subject":"Hello, World!"}],"from":{"email":"from_address@example.com"},"content":[{"type":"text/plain","value":"Hello, World!"}]}',
-    };
-
-    const email = await fetch(url, options)
-      .then((res) => res.json())
-      .then((json) => console.log(json))
-      .catch((err) => console.error("error:" + err));
+  const sendEmail = () => {};
+  const sendClickHandler = (e) => {
+    e.preventDefault();
+    sendEmail();
   };
 
-  return (
+  return formSent === false ? (
     <form className={styles["form"]}>
+      <div className={styles["label-input--container"]}>
+        <label className={styles["label"]} htmlFor={"userName"}>
+          Your Name
+        </label>
+        <input
+          name={"userName"}
+          type="text"
+          className={styles["input"]}
+          id={"userName"}
+          onBlur={blurHandler}
+          onClick={clickHandler}
+        />
+      </div>
       <div className={styles["label-input--container"]}>
         <label className={styles["label"]} htmlFor={"subject"}>
           Subject
         </label>
         <input
-          ref={subjectInputRef}
+          name={"subject"}
           type="text"
           className={styles["input"]}
           id={"subject"}
@@ -54,15 +68,16 @@ const CustomForm = () => {
           onClick={clickHandler}
         />
       </div>
+
       <div className={styles["label-input--container"]}>
-        <label className={styles["label"]} htmlFor={"email"}>
+        <label className={styles["label"]} htmlFor={"userEmail"}>
           Your Email
         </label>
         <input
-          ref={emailInputRef}
+          name={"userEmail"}
           type="email"
           className={styles["input"]}
-          id={"email"}
+          id={"userEmail"}
           onBlur={blurHandler}
           onClick={clickHandler}
         />
@@ -72,7 +87,7 @@ const CustomForm = () => {
           Body
         </label>
         <textarea
-          ref={bodyInputRef}
+          name={"body"}
           className={styles["body-input"]}
           rows={7}
           id={"body"}
@@ -81,12 +96,20 @@ const CustomForm = () => {
         />
       </div>
       <div className={styles["button-container"]}>
-        <button type="submit" className={styles["button"]}>
+        <button
+          onClick={sendClickHandler}
+          type="submit"
+          className={styles["button"]}
+        >
           send
           <SendIcon />
         </button>
       </div>
     </form>
+  ) : (
+    <div className={styles["form"]}>
+      Your email has been sent! I'll be getting back to your as soon as I can
+    </div>
   );
 };
 
