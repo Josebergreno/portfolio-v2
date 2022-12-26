@@ -60,7 +60,7 @@
 }
 .how-to--contact {
   font-family: "Nanum Pen Script", cursive;
-  font-size: 200%;
+  font-size: 150%;
   color: black;
   width: 80%;
   animation-name: fade-in;
@@ -76,10 +76,22 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 70%;
 }
 @media (max-width: 500px) {
   .icon {
     width: 15vmin;
   }
+  .how-to--contact {
+    font-size: 150%;
+  }
+  .span {
+    font-size: 70%;
+  }
+}
+
+.span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }

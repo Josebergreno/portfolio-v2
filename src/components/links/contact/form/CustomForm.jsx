@@ -14,7 +14,6 @@ const CustomForm = () => {
   const blurHandler = (e) => {
     if (e.target.name === "subject") {
       setSubjectInputState(e.target.value);
-      console.log(e);
     }
     if (e.target.name === "body") {
       setBodyInputState(e.target.value);
@@ -26,7 +25,6 @@ const CustomForm = () => {
       setUserNameInputState(e.target.value);
     }
   };
-
   const sendEmail = async (e) => {
     e.preventDefault();
 
@@ -56,6 +54,7 @@ const CustomForm = () => {
           Your Name
         </label>
         <input
+          autoComplete="off"
           name={"userName"}
           type="text"
           className={styles["input"]}
@@ -67,6 +66,7 @@ const CustomForm = () => {
           Subject
         </label>
         <input
+          autoComplete="off"
           name={"subject"}
           type="text"
           className={styles["input"]}
@@ -79,8 +79,9 @@ const CustomForm = () => {
           Your Email
         </label>
         <input
+          autoComplete="off"
           name={"userEmail"}
-          type="email"
+          type="text"
           className={styles["input"]}
           onBlur={blurHandler}
         />
@@ -90,15 +91,16 @@ const CustomForm = () => {
           Body
         </label>
         <textarea
+          autoComplete="off"
           name={"body"}
-          className={styles["body-input"]}
-          rows={7}
+          className={styles["textarea"]}
           onBlur={blurHandler}
+          rows={4}
         />
       </div>
       <div className={styles["button-container"]}>
         <button type="submit" className={styles["button"]}>
-          Send <SendIcon />
+          Send <SendIcon sx={{ width: "5vmin" }} />
         </button>
       </div>
     </form>

@@ -1,5 +1,4 @@
 .form {
-  background-color: #d81c23;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,36 +6,54 @@
 }
 
 .input {
-  background-color: aqua;
+  border: inset black 2px;
+  border-radius: 5px;
+  font-size: 70%;
+  font-family: "Nanum Pen Script", cursive;
+  background-color: transparent;
 }
-
-.body-input {
-  background-color: aqua;
+.input:focus {
+  outline: solid #4fa8c2 2px;
+}
+.input:hover {
+  outline: solid #4fa8c2 2px;
+}
+.textarea {
+  border: inset black 2px;
+  border-radius: 5px;
+  font-size: 70%;
+  font-family: "Nanum Pen Script", cursive;
   resize: none;
+
+  background-color: transparent;
+}
+.textarea:focus {
+  outline: solid #4fa8c2 2px;
+}
+.textarea:hover {
+  outline: solid #4fa8c2 2px;
 }
 
 .label-input--container {
-  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   width: 70%;
-  height: 20%;
+  max-width: 550px;
 }
 .label-textarea--container {
-  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
   width: 70%;
-  height: 80%;
+  max-width: 550px;
 }
 .button-container {
-  background-color: beige;
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 70%;
-  height: 20%;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 550px;
 }
 
 .button {
@@ -58,4 +75,12 @@
 }
 .button:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 500px) {
+  .button-container,
+  .label-textarea--container,
+  .label-input--container {
+    width: 90%;
+  }
 }

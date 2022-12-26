@@ -34,9 +34,11 @@ const ContactLink = (props) => {
             bodyInView ? styles["how-to--contact"] : styles["invisible"]
           }
         >
-          I can be contacted by filling out the form below
           <CustomForm />
-          or on the following platforms. Check me out on GitHub too!
+          <span className={styles["span"]}>
+            {" "}
+            Check me out on the following platforms!
+          </span>
         </div>
         <IconContainer iconRef={iconRef} iconInView={iconInView} />
       </div>
