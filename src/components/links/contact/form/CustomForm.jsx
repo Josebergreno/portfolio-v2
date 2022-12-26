@@ -1,47 +1,56 @@
 import React from "react";
 import styles from "./CustomForm.module.css";
 import SendIcon from "@mui/icons-material/Send";
-import { useState } from "react";
-import emailjs from "emailjs-com";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 const CustomForm = () => {
+  const form = useRef();
   const [subjectInputState, setSubjectInputState] = useState("");
   const [userEmailInputState, setUserEmailInputState] = useState("");
   const [bodyInputState, setBodyInputState] = useState("");
   const [userNameInputState, setUserNameInputState] = useState("");
   const [formSent, setFormSent] = useState(false);
-  const myEmail = "bergren.bergren@yahoo.com";
-  const clickHandler = (e) => {
-    // console.log(e.target.id);
-  };
-  console.log(process.env);
 
   const blurHandler = (e) => {
-    if (e.target.id === "subject") {
+    if (e.target.name === "subject") {
       setSubjectInputState(e.target.value);
-      console.log(e.target.value);
+      console.log(e);
     }
-    if (e.target.id === "body") {
+    if (e.target.name === "body") {
       setBodyInputState(e.target.value);
-      console.log(e.target.value);
     }
-    if (e.target.id === "userEmail") {
-      setEmailInputState(e.target.value);
-      console.log(e.target.value);
+    if (e.target.name === "userEmail") {
+      setUserEmailInputState(e.target.value);
     }
-    if (e.target.id === "userName") {
-      userNameInputState(e.target.value);
-      console.log(e.target.value);
+    if (e.target.name === "userName") {
+      setUserNameInputState(e.target.value);
     }
   };
 
-  const sendEmail = () => {};
-  const sendClickHandler = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
-    sendEmail();
+
+    const email = await emailjs
+      .sendForm(
+        `${process.env.REACT_APP_SERVICE_ID}`,
+        `${process.env.REACT_APP_TEMPLATE_ID}`,
+        form.current,
+        `${process.env.REACT_APP_PUBLIC_API_KEY}`,
+        {
+          userName: `${userNameInputState}`,
+          subject: `${subjectInputState}`,
+          userEmail: `${userEmailInputState}`,
+          body: `${bodyInputState}`,
+        }
+      )
+      .then((res) => console.log(res.text))
+      .catch((err) => console.log(err.text));
+    setFormSent(true);
+    return email;
   };
 
   return formSent === false ? (
-    <form className={styles["form"]}>
+    <form ref={form} className={styles["form"]} onSubmit={sendEmail}>
       <div className={styles["label-input--container"]}>
         <label className={styles["label"]} htmlFor={"userName"}>
           Your Name
@@ -50,9 +59,7 @@ const CustomForm = () => {
           name={"userName"}
           type="text"
           className={styles["input"]}
-          id={"userName"}
           onBlur={blurHandler}
-          onClick={clickHandler}
         />
       </div>
       <div className={styles["label-input--container"]}>
@@ -63,9 +70,7 @@ const CustomForm = () => {
           name={"subject"}
           type="text"
           className={styles["input"]}
-          id={"subject"}
           onBlur={blurHandler}
-          onClick={clickHandler}
         />
       </div>
 
@@ -77,9 +82,7 @@ const CustomForm = () => {
           name={"userEmail"}
           type="email"
           className={styles["input"]}
-          id={"userEmail"}
           onBlur={blurHandler}
-          onClick={clickHandler}
         />
       </div>
       <div className={styles["label-textarea--container"]}>
@@ -90,19 +93,12 @@ const CustomForm = () => {
           name={"body"}
           className={styles["body-input"]}
           rows={7}
-          id={"body"}
           onBlur={blurHandler}
-          onClick={clickHandler}
         />
       </div>
       <div className={styles["button-container"]}>
-        <button
-          onClick={sendClickHandler}
-          type="submit"
-          className={styles["button"]}
-        >
-          send
-          <SendIcon />
+        <button type="submit" className={styles["button"]}>
+          Send <SendIcon />
         </button>
       </div>
     </form>
