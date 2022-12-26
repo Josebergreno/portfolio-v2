@@ -1,0 +1,23 @@
+.label-input--container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  max-width: 550px;
+}
+.input {
+  border: inset black 2px;
+  border-radius: 5px;
+  font-size: 70%;
+  font-family: "Nanum Pen Script", cursive;
+  background-color: transparent;
+}
+.input:focus {
+  outline: solid #4fa8c2 2px;
+}
+.input:hover {
+  outline: solid #4fa8c2 2px;
+}
+
+.label {
+  color: aquamarine;
+}

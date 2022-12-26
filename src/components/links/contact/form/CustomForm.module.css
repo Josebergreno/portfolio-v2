@@ -33,13 +33,13 @@
 .textarea:hover {
   outline: solid #4fa8c2 2px;
 }
-
 .label-input--container {
   display: flex;
   flex-direction: column;
   width: 70%;
   max-width: 550px;
 }
+
 .label-textarea--container {
   display: flex;
   flex-direction: column;

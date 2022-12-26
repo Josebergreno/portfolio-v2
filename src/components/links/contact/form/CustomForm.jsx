@@ -3,6 +3,7 @@ import styles from "./CustomForm.module.css";
 import SendIcon from "@mui/icons-material/Send";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
+import EmailValid from "./email-validation/EmailValid";
 const CustomForm = () => {
   const form = useRef();
   const [subjectInputState, setSubjectInputState] = useState("");
@@ -74,18 +75,7 @@ const CustomForm = () => {
         />
       </div>
 
-      <div className={styles["label-input--container"]}>
-        <label className={styles["label"]} htmlFor={"userEmail"}>
-          Your Email
-        </label>
-        <input
-          autoComplete="off"
-          name={"userEmail"}
-          type="text"
-          className={styles["input"]}
-          onBlur={blurHandler}
-        />
-      </div>
+      <EmailValid onBlur={blurHandler} />
       <div className={styles["label-textarea--container"]}>
         <label className={styles["label"]} htmlFor={"body"}>
           Body
