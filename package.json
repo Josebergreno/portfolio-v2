@@ -24,8 +24,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-dotenv && react-scripts start",
+    "build": "react-dotenv && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,6 +45,17 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "react-dotenv": {
+    "whitelist": [
+      "REACT_APP_API_KEY",
+      "REACT_APP_API_HOST",
+      "REACT_APP_RAPID_API_KEY",
+      "REACT_APP_TEMPLATE_ID",
+      "REACT_APP_SERVICE_ID",
+      "REACT_APP_MY_EMAIL",
+      "REACT_APP_PUBLIC_API_KEY"
     ]
   }
 }

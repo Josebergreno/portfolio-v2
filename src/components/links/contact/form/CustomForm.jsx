@@ -4,6 +4,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import EmailValid from "./email-validation/EmailValid";
+import env from "react-dotenv";
 const CustomForm = () => {
   const form = useRef();
   const [subjectInputState, setSubjectInputState] = useState("");
@@ -32,10 +33,10 @@ const CustomForm = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        env.REACT_APP_SERVICE_ID,
+        env.REACT_APP_TEMPLATE_ID,
         form.current,
-        process.env.REACT_APP_PUBLIC_API_KEY,
+        env.REACT_APP_PUBLIC_API_KEY,
         {
           userName: `${userNameInputState}`,
           subject: `${subjectInputState}`,
@@ -50,6 +51,8 @@ const CustomForm = () => {
       })
       .catch((err) => console.log(err));
   };
+  console.log(env.REACT_APP_PUBLIC_API_KEY);
+  console.log(env.REACT_APP_SERVICE_ID);
 
   return formSent === false ? (
     <form ref={form} className={styles["form"]} onSubmit={sendEmail}>
