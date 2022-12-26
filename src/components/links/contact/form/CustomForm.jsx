@@ -47,7 +47,7 @@ const CustomForm = () => {
     setFormSent(true);
     return email;
   };
-
+  console.log("hello world");
   return formSent === false ? (
     <form ref={form} className={styles["form"]} onSubmit={sendEmail}>
       <div className={styles["label-input--container"]}>
