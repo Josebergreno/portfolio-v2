@@ -47,15 +47,5 @@
       "last 1 safari version"
     ]
   },
-  "react-dotenv": {
-    "whitelist": [
-      "REACT_APP_API_KEY",
-      "REACT_APP_API_HOST",
-      "REACT_APP_RAPID_API_KEY",
-      "REACT_APP_TEMPLATE_ID",
-      "REACT_APP_SERVICE_ID",
-      "REACT_APP_MY_EMAIL",
-      "REACT_APP_PUBLIC_API_KEY"
-    ]
-  }
+  "react-dotenv": {}
 }
