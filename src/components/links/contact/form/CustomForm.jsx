@@ -13,23 +13,24 @@ const CustomForm = () => {
   const [formSent, setFormSent] = useState(false);
 
   const blurHandler = (e) => {
-    if (e.target.name === "subject") {
-      setSubjectInputState(e.target.value);
+    const name = e.target.name;
+    const value = e.target.value;
+    if (name === "subject") {
+      setSubjectInputState(value);
     }
-    if (e.target.name === "body") {
-      setBodyInputState(e.target.value);
+    if (name === "body") {
+      setBodyInputState(value);
     }
-    if (e.target.name === "userEmail") {
-      setUserEmailInputState(e.target.value);
+    if (name === "userEmail") {
+      setUserEmailInputState(value);
     }
-    if (e.target.name === "userName") {
-      setUserNameInputState(e.target.value);
+    if (name === "userName") {
+      setUserNameInputState(value);
     }
   };
-  const sendEmail = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-
-    const email = await emailjs
+    emailjs
       .sendForm(
         `${process.env.REACT_APP_SERVICE_ID}`,
         `${process.env.REACT_APP_TEMPLATE_ID}`,
@@ -42,10 +43,12 @@ const CustomForm = () => {
           body: `${bodyInputState}`,
         }
       )
-      .then((res) => console.log(res.text))
-      .catch((err) => console.log(err.text));
-    setFormSent(true);
-    return email;
+      .then((res) => {
+        console.log(res);
+        console.log("Message Sent");
+        setFormSent(true);
+      })
+      .catch((err) => console.log(err));
   };
 
   return formSent === false ? (

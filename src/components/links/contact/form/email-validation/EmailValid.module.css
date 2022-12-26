@@ -18,6 +18,8 @@
   outline: solid #4fa8c2 2px;
 }
 
-.label {
-  color: aquamarine;
+@media (max-width: 500px) {
+  .label-input--container {
+    width: 90%;
+  }
 }
