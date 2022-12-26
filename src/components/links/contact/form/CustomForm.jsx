@@ -32,10 +32,10 @@ const CustomForm = () => {
     e.preventDefault();
     emailjs
       .sendForm(
-        `${process.env.REACT_APP_SERVICE_ID}`,
-        `${process.env.REACT_APP_TEMPLATE_ID}`,
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
         form.current,
-        `${process.env.REACT_APP_PUBLIC_API_KEY}`,
+        process.env.REACT_APP_PUBLIC_API_KEY,
         {
           userName: `${userNameInputState}`,
           subject: `${subjectInputState}`,
