@@ -53,6 +53,7 @@ const CustomForm = () => {
   };
   console.log(env.REACT_APP_PUBLIC_API_KEY);
   console.log(env.REACT_APP_SERVICE_ID);
+  console.log("testing dotenv in production build");
 
   return formSent === false ? (
     <form ref={form} className={styles["form"]} onSubmit={sendEmail}>
