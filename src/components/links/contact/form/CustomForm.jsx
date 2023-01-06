@@ -24,6 +24,22 @@ const CustomForm = () => {
     }
     if (name === "userEmail") {
       setUserEmailInputState(value);
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "b123967923msh19bc23c13dee912p17e95bjsn19b6a6d19eb1",
+          "X-RapidAPI-Host": "validect-email-verification-v1.p.rapidapi.com",
+        },
+      };
+
+      fetch(
+        "https://validect-email-verification-v1.p.rapidapi.com/v1/verify?email=example%40gmail.com",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => console.log(response))
+        .catch((err) => console.error(err));
     }
     if (name === "userName") {
       setUserNameInputState(value);

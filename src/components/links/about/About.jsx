@@ -1,5 +1,4 @@
 import styles from "./About.module.css";
-// import img from "../../UI/Icons/polish-pic.png";
 import { useInView } from "react-intersection-observer";
 const About = (props) => {
   const [titleRef, titleInView] = useInView({
